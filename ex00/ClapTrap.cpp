@@ -33,3 +33,18 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 	return *this;
 }
 
+void ClapTrap::attack(const std::string& target) {
+	if (_energyPoints == 0)
+	{
+		std::cout << "ClapTrap " << _name << " has no energy to attack!" << std::endl;
+		return;
+	}
+	if (_hitPoints == 0)
+	{
+		std::cout << "ClapTrap " << _name << " is destroyed and can't attack!" << std::endl;
+		return; 
+	}
+	_energyPoints--;
+	std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage!" << std::endl;
+}
+

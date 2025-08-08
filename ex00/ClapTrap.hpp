@@ -29,7 +29,4 @@ public:
 	unsigned int getAttackDamage() const;
 };
 
-
-
-
 #endif
