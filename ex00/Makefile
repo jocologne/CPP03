@@ -18,7 +18,7 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)/%.o: %.cpp $(HDRS) | $(OBJ_DIR)
 	@$(CXX) $(FLAGS) -c $< -o $@
 
-$(OBJ_DIR)
+$(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 clean:
