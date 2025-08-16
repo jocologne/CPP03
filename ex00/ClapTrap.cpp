@@ -48,3 +48,46 @@ void ClapTrap::attack(const std::string& target) {
 	std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
+void ClapTrap::takeDamage(unsigned int amount) {
+	if(_hitPoints == 0) {
+		std::cout << _name << "is already destroyed" << std::endl;
+		return;
+	}
+	if(amount >= _hitPoints) {
+		_hitPoints = 0;
+		std::cout << _name << " takes " << amount << " damage and is destroyed!" << std::endl;
+	} else {
+		_hitPoints -= amount;
+		std::cout << _name << " takes " << amount << " damage (" << _hitPoints << " HP remaining)" << std::endl;
+	}
+}
+
+void ClapTrap::beRepaired(unsigned int amount) {
+	if (_energyPoints == 0) {
+		std::cout << _name << " can't repair - no energy left!" << std::endl;
+		return;
+	}
+	if (_hitPoints == 0) {
+		std::cout << _name << " can't repair - already destroyed!" << std::endl;
+		return;
+	}
+	_energyPoints--;
+	_hitPoints += amount;
+	std::cout << _name << " repairs itself for " << amount << " HP (" << _hitPoints << ")" << std::endl;
+}
+
+std::string ClapTrap::getName() const {
+	return _name;
+}
+
+unsigned int ClapTrap::getHitPoints() const {
+	return _hitPoints;
+}
+
+unsigned int ClapTrap::getEnergyPoints() const {
+	return _energyPoints;
+}
+
+unsigned int ClapTrap::getAttackDamage() const {
+	return _attackDamage;
+}
