@@ -20,7 +20,7 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << _name << "destroyed!" << std::endl;
+	std::cout << "FragTrap " << _name << " destroyed!" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& other) {

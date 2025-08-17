@@ -1,7 +1,6 @@
 CXX = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = FragTrap
-INCLUDES = -I.
 
 OBJ_DIR = obj
 SRCS = main.cpp ClapTrap.cpp FragTrap.cpp
@@ -14,10 +13,10 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(FLAGS) $(INCLUDES) $^ -o $@
+	@$(CXX) $(FLAGS) $^ -o $@
 
 $(OBJ_DIR)/%.o: %.cpp $(HDRS) | $(OBJ_DIR)
-	@$(CXX) $(FLAGS) $(INCLUDES) $< -o $@
+	@$(CXX) $(FLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
