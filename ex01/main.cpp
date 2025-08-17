@@ -13,7 +13,7 @@ int main () {
 	scav1.takeDamage(30);
 	scav1.beRepaired(15);
 	scav1.guardGate();
-	scav1.takeDamage(100); // Should destroy it
+	scav1.takeDamage(110); // Should destroy it
 	scav1.attack("Should fail"); // Should fail
 	scav1.guardGate(); // Still works - no EP/HP check
 
